@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    int x;
+};
+
+class B : public A {
+};
+
+class C : public A {
+};
+
+// D inherits A twice (through B and C)
+class D : public B, public C {
+};
+
+int main() {
+    D obj;
+    // obj.x = 10;  ❌ Error: ambiguous (which A’s x?)
+    cout << "Multiple copies of A cause ambiguity!" << endl;
+    return 0;
+}
