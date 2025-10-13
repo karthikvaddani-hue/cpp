@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+template <class T>
+class Display {
+    T value;
+public:
+    Display(T v);
+    void show();
+};
+
+template <class T>
+Display<T>::Display(T v) {
+    value = v;
+}
+
+template <class T>
+void Display<T>::show() {
+    cout << "Value: " << value << endl;
+}
+
+int main() {
+    Display<int> d1(100);
+    Display<string> d2("Template Example");
+    d1.show();
+    d2.show();
+    return 0;
+}
